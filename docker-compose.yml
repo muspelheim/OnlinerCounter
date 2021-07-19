@@ -1,0 +1,110 @@
+version: '3.4'
+
+services:
+  web:
+    image: nginx
+    volumes:
+      - ./.docker/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
+      - .docker/nginx/entry.sh:/entry.sh
+      - ./data:/var/www/html
+      - ./app:/var/www/app
+    ports:
+      - "8081:80"
+    environment:
+      PAGES_COUNT: ${PAGES_COUNT}
+
+  php:
+    build: ./.docker/php
+    working_dir: /var/www/app
+    env_file:
+      - .env
+    volumes:
+      - ./app:/var/www/app
+
+  redis:
+    image: redis
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    ports:
+      - 6380:6379
+
+  redis1:
+    image: redis
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    ports:
+      - 6381:6379
+
+  redis2:
+    image: redis
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    ports:
+      - 6382:6379
+
+  redis3:
+    image: redis
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    ports:
+      - 6383:6379
+
+  redis4:
+    image: redis
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    ports:
+      - 6384:6379
+
+  redis5:
+    image: redis
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    ports:
+      - 6385:6379
+
+  redis6:
+    image: redis
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    ports:
+      - 6386:6379
+
+  redis7:
+    image: redis
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    ports:
+      - 6387:6379
+
+  redis8:
+    image: redis
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    ports:
+      - 6388:6379
+
+  redis9:
+    image: redis
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    ports:
+      - 6389:6379
+
+  redis10:
+    image: redis
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    ports:
+      - 6390:6379
