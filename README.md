@@ -76,3 +76,5 @@ _See numbers on image:_
 1-2: we able to disable composer autoload and keep simple PHP files and inject them one by one thorough `require_once` to speedup application for 24%
 
 3: This method used to show counter of visitors on the page, we can remove it to increase performance of our application for 10% 
+
+Thank you!
